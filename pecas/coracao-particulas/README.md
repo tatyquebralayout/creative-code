@@ -1,7 +1,7 @@
 # Coração de partículas
 
-Coração anatômico pulsando enquanto partículas vermelhas se soltam dele em 3D.
-*Anatomical heart pulsing while red particles drift off it in 3D.*
+Coração anatômico claro pulsando enquanto partículas douradas se soltam dele em 3D.
+*Light anatomical heart pulsing while golden particles drift off it in 3D.*
 
 Autora: Tatiana Barros
 

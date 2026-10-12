@@ -34,6 +34,8 @@ function createCamera() {
 function createRenderer() {
     // Cria um novo renderizador WebGL
     const renderer = new THREE.WebGLRenderer();
+    // Fundo grafite da galeria (--bg)
+    renderer.setClearColor(0x111111);
     // Define o tamanho do renderizador
     renderer.setSize(SCENE_WIDTH, SCENE_HEIGHT);
     // Adiciona o elemento do renderizador ao corpo do documento
@@ -60,9 +62,10 @@ function main() {
     const camera = createCamera();
 
     // Cria os cubos
-    const cube1 = createCube(0xff0000); // Cubo vermelho
-    const cube2 = createCube(0x00ff00); // Cubo verde
-    const cube3 = createCube(0x0000ff); // Cubo azul
+    // Paleta da galeria: dourado, off-white e grafite
+    const cube1 = createCube(0xc9a227); // Cubo dourado (--gold)
+    const cube2 = createCube(0xe8e4da); // Cubo off-white
+    const cube3 = createCube(0x2b2b2b); // Cubo grafite
 
     // Adiciona os cubos à cena
     scene.add(cube1);

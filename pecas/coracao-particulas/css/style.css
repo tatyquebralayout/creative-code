@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #4169e1;
+    background-color: #111; /* grafite da galeria (--bg) */
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -37,4 +37,9 @@ canvas.particulas {
 /* Quem pediu "reduzir movimento" no sistema vê o coração parado */
 @media (prefers-reduced-motion: reduce) {
     #coracion { animation: none; }
+}
+
+/* Paleta da galeria: o coração anatômico em off-white pra aparecer sobre o grafite */
+#coracion svg path {
+    fill: #e8e4da;
 }
