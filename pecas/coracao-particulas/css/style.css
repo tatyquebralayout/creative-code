@@ -34,9 +34,12 @@ canvas.particulas {
     pointer-events: none;
 }
 
-/* Quem pediu "reduzir movimento" no sistema vê o coração parado */
+/* Botão de pausar (assets/pausa.js): pausado, o coração para de pulsar */
+html.pausa-pausado #coracion { animation-play-state: paused; }
+
+/* Quem pediu "reduzir movimento" vê o coração parado, mesmo se o script não carregar */
 @media (prefers-reduced-motion: reduce) {
-    #coracion { animation: none; }
+    html:not(.pausa-pronto) #coracion { animation: none; }
 }
 
 /* Paleta da galeria: o coração anatômico em off-white pra aparecer sobre o grafite */

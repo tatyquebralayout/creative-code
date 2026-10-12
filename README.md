@@ -35,7 +35,7 @@ Treze peças que rodam direto no navegador, feitas em p5.js, Canvas e Three.js. 
 
 ### Como rodar
 
-Tudo é estático (HTML, CSS e JavaScript, com as bibliotecas por CDN). Abra o `index.html` no navegador, ou a pasta de uma peça pra ver só ela. As animações param pra quem ativou "reduzir movimento" no sistema.
+Tudo é estático (HTML, CSS e JavaScript, com as bibliotecas por CDN). Abra o `index.html` no navegador, ou a pasta de uma peça pra ver só ela. As peças animadas têm um botão redondo de pausar no canto inferior direito, que funciona com mouse e teclado, e a barra de espaço também pausa e retoma. Pra quem ativou "reduzir movimento" no sistema, elas já abrem pausadas, no primeiro quadro, e dá pra tocar a animação quando quiser. O botão vem de [`assets/pausa.js`](assets/pausa.js), um script pequeno compartilhado pelas peças em p5.js, Canvas e Three.js.
 
 ### Origem
 
@@ -65,7 +65,7 @@ Thirteen pieces that run straight in the browser, made with p5.js, Canvas and Th
 
 ### How to run
 
-Everything is static (HTML, CSS and JavaScript, with libraries from a CDN). Open `index.html` in a browser, or a piece's folder to see just that one. Animations stop for anyone who turned on "reduce motion" in their system.
+Everything is static (HTML, CSS and JavaScript, with libraries from a CDN). Open `index.html` in a browser, or a piece's folder to see just that one. Animated pieces have a round pause button in the bottom-right corner, usable with mouse and keyboard, and the Space bar also pauses and resumes. If "reduce motion" is on in your system, they open paused on the first frame and you can play the animation whenever you like. The button comes from [`assets/pausa.js`](assets/pausa.js), a small script shared by the p5.js, Canvas and Three.js pieces.
 
 ### Origin
 

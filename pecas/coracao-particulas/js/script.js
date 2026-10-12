@@ -14,14 +14,15 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.domElement.classList.add('particulas');
 document.body.appendChild(renderer.domElement);
 
-// Respeita a configuração "reduzir movimento" do sistema: as partículas ficam paradas.
-var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Botão de pausar (assets/pausa.js): quem pediu "reduzir movimento" no sistema
+// abre a peça pausada, com as partículas e o coração parados, e pode apertar "Continuar".
 
 // Mantém a cena do tamanho da janela
 window.addEventListener('resize', function() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    if (pausa.pausado) renderer.render(scene, camera);
 });
 
 // Cria um carregador SVG
@@ -88,15 +89,14 @@ loader.load('svg/Coracion.svg', function(data) {
 
     // Adicione o grupo à sua cena
     scene.add(group);
+    // Se a peça está pausada, desenha as partículas paradas no lugar
+    if (pausa.pausado) renderer.render(scene, camera);
 });
 
 // Animação
 function animate() {
-    requestAnimationFrame(animate);
-
     // Atualiza a posição de cada partícula
     for (var i = 0; i < particles.length; i++) {
-        if (reduceMotion) break;
         particles[i].position.add(particles[i].velocity);
         // Quando a partícula se afasta demais, ela volta para o coração (loop infinito)
         if (particles[i].position.length() > 700) particles[i].position.set(0, 0, 0);
@@ -105,4 +105,5 @@ function animate() {
 
     renderer.render(scene, camera);
 }
-animate();
+// Roda animate a cada quadro com renderer.setAnimationLoop; o botão liga e desliga o laço
+var pausa = window.Pausa.three(renderer, animate);
