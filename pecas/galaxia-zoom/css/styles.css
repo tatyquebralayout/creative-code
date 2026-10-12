@@ -1,0 +1,26 @@
+/* Styles for HTML canvas element */
+canvas {
+    display: block; /* Display type */
+    margin: auto; /* Center element */
+    background: black; /* Background color */
+    width: 800px; /* Width */
+    max-width: 100%; /* Fits small screens */
+    height: auto; /* Keeps the 4:3 ratio */
+}
+
+/* Styles for HTML input elements of type range */
+input[type="range"] {
+    display: block; /* Display type */
+    width: 80%; /* Width */
+    margin: 10px auto; /* Center element with a vertical margin of 10px */
+}
+
+/* Page background and zoom label */
+body {
+    margin: 0;
+    padding: 20px 0;
+    background: #000;
+    color: #eee;
+    font-family: "Courier New", ui-monospace, monospace;
+    text-align: center;
+}

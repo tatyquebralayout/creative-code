@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubos em Three.js</title>
+    <style>body { margin: 0; overflow: hidden; background: #000; } canvas { display: block; }</style>
+</head>
+<body>
+    <!-- three.js fixado na mesma versão do package.json original (0.159.0), via CDN -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.module.js",
+            "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.159.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+/* Style for the body element */
+
+body {
+    margin: 0;
+    padding: 20px;
+    /* Aumenta o padding para criar mais espaço */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: auto;
+    /* Permite rolagem se o conteúdo exceder a altura da janela */
+}
+
+
+/* Style for the element with id 'container' */
+
+#container {
+    display: flex;
+    flex-direction: column;
+    /* Alterado de 'row' para 'column' */
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 120px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+
+/* Style for the element with id 'meuCanvas' */
+
+#meuCanvas {
+    width: 500px;
+    /* Define a largura do canvas */
+    height: 500px;
+    /* Define a altura do canvas */
+    border: 1px solid black;
+    margin-bottom: 20px;
+    /* Adiciona margem abaixo do canvas para criar espaço para os botões */
+}
+
+
+/* Style for the elements with id 'instrucoes' and 'limparCanvas' */
+
+#instrucoes {
+    text-align: center;
+    margin-bottom: 10px;
+    /* Adiciona margem abaixo do texto para criar espaço para os botões */
+}
+
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#limparCanvas {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#cores {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#corVerdeNeon,
+#corPinkNeon,
+#corAzulNeon,
+#corLaranjaNeon {
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px 10px;
+    position: relative;
+    top: 3px;
+}
+
+#corVerdeNeon {
+    background-color: #39FF14;
+    /* Cor verde neon */
+}
+
+#corPinkNeon {
+    background-color: #FF14F0;
+    /* Cor pink neon */
+}
+
+#corAzulNeon {
+    background-color: #1400FF;
+    /* Cor azul neon */
+}
+
+#corLaranjaNeon {
+    background-color: #FFA500;
+    /* Cor laranja neon */
+}
