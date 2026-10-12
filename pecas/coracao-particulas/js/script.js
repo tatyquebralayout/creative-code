@@ -45,7 +45,7 @@ loader.load('svg/Coracion.svg', function(data) {
         var path = paths[i];
 
         var material = new THREE.PointsMaterial({
-            color: 0xff0000,  // Cor fixa para teste
+            color: 0xe0bd4a,  // dourado claro (paleta da galeria)
             size: 0.1  // Tamanho maior para teste
         });
 
