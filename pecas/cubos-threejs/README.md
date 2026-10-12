@@ -1,7 +1,7 @@
 # Cubos em Three.js
 
-Três cubos coloridos girando, se separando e voltando a se juntar.
-*Three colored cubes spinning, drifting apart and coming back together.*
+Três cubos em grafite, dourado e branco girando, se separando e voltando a se juntar.
+*Three cubes in graphite, gold and white spinning, drifting apart and coming back together.*
 
 Autora: Tatiana Barros
 
