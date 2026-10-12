@@ -7,6 +7,10 @@
 
 ### [▶ Abrir a galeria · Open the gallery](https://tatyquebralayout.github.io/creative-code/)
 
+<a href="video/creative-code-16x9.mp4"><img src="video/creative-code-16x9.webp" width="560" alt="Vídeo de 26 segundos mostrando as 13 peças da galeria uma por vez, terminando com o nome Tatiana Barros e o link da galeria · 26-second video showing the gallery's 13 pieces one at a time, ending with Tatiana Barros's name and the gallery link"></a>
+
+🎬 Vídeo · Video: [16:9](video/creative-code-16x9.mp4) · [4:5](video/creative-code-4x5.mp4) · [9:16](video/creative-code-9x16.mp4)
+
 [🇧🇷 Português](#-português) · [🇺🇸 English](#-english)
 
 </div>
@@ -35,7 +39,7 @@ Treze peças que rodam direto no navegador, feitas em p5.js, Canvas e Three.js. 
 
 ### Como rodar
 
-Tudo é estático (HTML, CSS e JavaScript, com as bibliotecas por CDN). Abra o `index.html` no navegador, ou a pasta de uma peça pra ver só ela. As peças animadas têm um botão redondo de pausar no canto inferior direito, que funciona com mouse e teclado, e a barra de espaço também pausa e retoma. Pra quem ativou "reduzir movimento" no sistema, elas já abrem pausadas, no primeiro quadro, e dá pra tocar a animação quando quiser. O botão vem de [`assets/pausa.js`](assets/pausa.js), um script pequeno compartilhado pelas peças em p5.js, Canvas e Three.js.
+Tudo é estático (HTML, CSS e JavaScript, com as bibliotecas por CDN). Abra o `index.html` no navegador, ou a pasta de uma peça pra ver só ela. As seis peças que se mexem sozinhas (Reutersvärd em movimento, Neon Convergence, Galáxia com zoom, Estudos em Canvas, Cubos em Three.js e Coração de partículas) têm um botão redondo de pausar no canto inferior direito, que funciona com mouse e teclado, e a barra de espaço também pausa e retoma. Pra quem ativou "reduzir movimento" no sistema, elas já abrem pausadas, mostrando o primeiro quadro, e dá pra tocar a animação quando quiser. As outras sete só se mexem quando você interage, então não precisam do botão. O botão vem de [`assets/pausa.js`](assets/pausa.js), um script pequeno compartilhado pelas peças em p5.js, Canvas e Three.js.
 
 ### Origem
 
@@ -65,7 +69,7 @@ Thirteen pieces that run straight in the browser, made with p5.js, Canvas and Th
 
 ### How to run
 
-Everything is static (HTML, CSS and JavaScript, with libraries from a CDN). Open `index.html` in a browser, or a piece's folder to see just that one. Animated pieces have a round pause button in the bottom-right corner, usable with mouse and keyboard, and the Space bar also pauses and resumes. If "reduce motion" is on in your system, they open paused on the first frame and you can play the animation whenever you like. The button comes from [`assets/pausa.js`](assets/pausa.js), a small script shared by the p5.js, Canvas and Three.js pieces.
+Everything is static (HTML, CSS and JavaScript, with libraries from a CDN). Open `index.html` in a browser, or a piece's folder to see just that one. The six pieces that move on their own (Reutersvärd in motion, Neon Convergence, Galaxy zoom, Canvas studies, Three.js cubes and Particle heart) have a round pause button in the bottom-right corner, usable with mouse and keyboard, and the Space bar also pauses and resumes. If "reduce motion" is on in your system, they open paused, showing the first frame, and you can play the animation whenever you like. The other seven only move when you interact with them, so they don't need the button. The button comes from [`assets/pausa.js`](assets/pausa.js), a small script shared by the p5.js, Canvas and Three.js pieces.
 
 ### Origin
 

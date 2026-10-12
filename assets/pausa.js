@@ -36,7 +36,7 @@
 
   var CSS =
     '.pausa-botao{position:fixed;right:16px;bottom:16px;z-index:2147483000;box-sizing:border-box;width:44px;height:44px;' +
-    'display:flex;align-items:center;justify-content:center;margin:0;padding:0;border:0;border-radius:50%;' +
+    'display:flex;align-items:center;justify-content:center;margin:0;padding:0;border:1px solid rgba(201,162,39,.4);border-radius:50%;' +
     'background:rgba(17,17,17,.8);color:#c9a227;cursor:pointer;-webkit-appearance:none;appearance:none;}' +
     '.pausa-botao svg{display:block;pointer-events:none;}' +
     '.pausa-botao:focus{outline:none;}' +
