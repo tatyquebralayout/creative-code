@@ -47,22 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // The updateGalaxy function updates the angle and redraws the galaxy.
-    // Respects the "reduce motion" system setting: the galaxy stays still.
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     function updateGalaxy() {
-        if (!reduceMotion) angle += 0.01;
+        angle += 0.01;
         drawGalaxy();
-        if (!reduceMotion) requestAnimationFrame(updateGalaxy);
     }
+
+    // The galaxy is initialized and the animation starts.
+    // assets/pausa.js adds a pause button; with "reduce motion" on, the galaxy starts still.
+    initGalaxy();
+    const pausa = window.Pausa.laco(updateGalaxy);
 
     // An event listener is added to the zoom control to update the zoom level.
     document.getElementById('zoomControl').addEventListener('input', function() {
         zoomLevel = parseFloat(this.value);
-        if (reduceMotion) drawGalaxy();
+        if (pausa.pausado) drawGalaxy();
     });
-
-    // The galaxy is initialized and the animation starts.
-    initGalaxy();
-    updateGalaxy();
 });

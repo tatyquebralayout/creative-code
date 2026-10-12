@@ -6,8 +6,8 @@ import { OutlineEffect } from 'three/examples/jsm/effects/OutlineEffect.js';
 const SCENE_WIDTH = window.innerWidth;
 const SCENE_HEIGHT = window.innerHeight;
 
-// Respeita a configuração "reduzir movimento" do sistema
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Botão de pausar (assets/pausa.js): quem pediu "reduzir movimento" no sistema
+// abre a peça pausada, no primeiro quadro, e pode apertar "Continuar".
 
 // Função para criar a cena
 function createScene() {
@@ -83,9 +83,10 @@ function main() {
      * Animate
      */
     const clock = new THREE.Clock(); // Cria um novo relógio
+    let elapsedTime = 0; // Tempo de animação; não conta o tempo em que a peça ficou pausada
 
     const tick = () => {
-        const elapsedTime = clock.getElapsedTime(); // Obtém o tempo decorrido desde a criação do relógio
+        elapsedTime += Math.min(clock.getDelta(), 0.1); // Soma o tempo desde o último quadro
 
         // Atualiza os objetos
         camera.position.x = Math.cos(elapsedTime); // Move a câmera no eixo X
@@ -108,12 +109,10 @@ function main() {
         // Renderiza a cena
         effect.render(scene, camera);
 
-        // Chama a função tick novamente no próximo frame
-        // (quem pediu "reduzir movimento" no sistema vê só o primeiro quadro, parado)
-        if (!reduceMotion) window.requestAnimationFrame(tick);
     }
 
-    tick(); // Chama a função tick pela primeira vez
+    // Roda tick a cada quadro com renderer.setAnimationLoop (ou desenha um quadro só, se começar pausado)
+    window.Pausa.three(renderer, tick);
 }
 
 // Chama a função principal

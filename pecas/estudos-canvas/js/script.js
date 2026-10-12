@@ -131,8 +131,9 @@ document.addEventListener('DOMContentLoaded', function() {
     canvas.height = 600;
     const ctx = canvas.getContext('2d');
     let particles = [];
-    // Respects the "reduce motion" system setting: particles stay still.
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Respects the "reduce motion" system setting: the rain starts paused (assets/pausa.js),
+    // with the particles spread over the canvas, and the pause button can start it.
+    const reduceMotion = window.Pausa.reduzirMovimento.matches;
 
     // This class defines a particle
     class Particle {
@@ -170,24 +171,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // This function animates the particles
-    function animate() {
+    // This function draws the particles (moving them first when move is true)
+    function drawParticles(move) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach(particle => {
-            if (!reduceMotion) particle.update();
+            if (move) particle.update();
             particle.draw();
         });
-        if (!reduceMotion) requestAnimationFrame(animate);
+    }
+
+    // This function animates the particles, one frame at a time (loop + pause button: assets/pausa.js)
+    function animate() {
+        drawParticles(true);
     }
 
     // Initialize with white particles
     initParticles(100, '#FFFFFF');
-    animate();
+    const pausa = window.Pausa.laco(animate);
 
     // This function allows to change the color of the particles
     window.changeParticleColor = function() {
         const color = document.getElementById('particleColor').value;
         particles.forEach(particle => particle.color = color);
-        if (reduceMotion) animate();
+        if (pausa.pausado) drawParticles(false);
     };
 });

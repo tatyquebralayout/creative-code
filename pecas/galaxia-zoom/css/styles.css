@@ -13,6 +13,7 @@ input[type="range"] {
     display: block; /* Display type */
     width: 80%; /* Width */
     margin: 10px auto; /* Center element with a vertical margin of 10px */
+    accent-color: #c9a227; /* Gold slider, gallery palette */
 }
 
 /* Page background and zoom label */
