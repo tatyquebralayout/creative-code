@@ -1,0 +1,456 @@
+/**
+ * Enhanced Reutersvärd Triangle 3D Visualization Styles
+ * Advanced Interactive Impossible Geometry Art Interface
+ * Inspired by Oscar Reutersvärd's revolutionary work (1934)
+ * 
+ * @author Tatiana Barros  
+ * @version 5.0.0 - Enhanced Impossible Geometry Edition
+ */
+
+/* ====== ADVANCED CONTROLS STYLES ====== */
+.advanced-controls-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(15, 15, 25, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    min-width: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto;
+}
+
+.advanced-control-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg,
+            rgba(85, 255, 85, 0.8) 0%,
+            rgba(120, 255, 120, 0.9) 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.advanced-control-btn:hover {
+    background: linear-gradient(135deg,
+            rgba(85, 255, 85, 1) 0%,
+            rgba(140, 255, 140, 1) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(85, 255, 85, 0.4);
+}
+
+.advanced-control-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(85, 255, 85, 0.3);
+}
+
+.advanced-slider-container {
+    margin-bottom: 15px;
+}
+
+.advanced-slider-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #cccccc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.advanced-slider {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.advanced-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #85ff85, #55ff55);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(85, 255, 85, 0.5);
+    transition: all 0.3s ease;
+}
+
+.advanced-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(85, 255, 85, 0.8);
+}
+
+.advanced-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #85ff85, #55ff55);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(85, 255, 85, 0.5);
+}
+
+.view-mode-container {
+    margin-bottom: 15px;
+}
+
+.view-mode-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #cccccc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.view-mode-selector {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.view-mode-selector:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.view-mode-selector:focus {
+    outline: 2px solid rgba(85, 255, 85, 0.7);
+    outline-offset: 2px;
+}
+
+.view-mode-selector option {
+    background: #1a1a2e;
+    color: white;
+    padding: 8px;
+}
+
+/* ====== ENHANCED CANVAS GLOW EFFECTS ====== */
+#canvas-container {
+    position: relative;
+    z-index: 2;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 0 50px rgba(255, 85, 85, 0.3),
+        0 0 100px rgba(85, 255, 85, 0.2),
+        0 0 150px rgba(85, 85, 255, 0.1);
+    animation: impossibleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes impossibleGlow {
+    0% {
+        box-shadow:
+            0 0 30px rgba(255, 85, 85, 0.3),
+            0 0 60px rgba(85, 255, 85, 0.2),
+            0 0 90px rgba(85, 85, 255, 0.1);
+        transform: scale(1);
+    }
+
+    100% {
+        box-shadow:
+            0 0 50px rgba(255, 85, 85, 0.5),
+            0 0 100px rgba(85, 255, 85, 0.3),
+            0 0 150px rgba(85, 85, 255, 0.2);
+        transform: scale(1.002);
+    }
+}
+
+/* ====== ENHANCED HEADER ANIMATIONS ====== */
+.header h1 {
+    background: linear-gradient(45deg, #ff5555, #55ff55, #5555ff);
+    background-size: 200% 200%;
+    animation: impossibleGradient 4s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+@keyframes impossibleGradient {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.header .inspiration {
+    font-size: 0.9em;
+    opacity: 0.7;
+    font-style: italic;
+    color: #88ccff;
+    margin-top: 10px;
+    animation: fadeInOut 3s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+/* ====== CANVAS SECTION BACKGROUND EFFECTS ====== */
+.canvas-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.canvas-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg,
+            transparent,
+            rgba(255, 85, 85, 0.1),
+            transparent,
+            rgba(85, 255, 85, 0.1),
+            transparent,
+            rgba(85, 85, 255, 0.1),
+            transparent);
+    animation: impossibleRotate 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes impossibleRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ====== ENHANCED INTERACTIVE HINTS ====== */
+.interaction-hints {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(15, 15, 25, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    font-size: 0.8em;
+    color: #cccccc;
+    max-width: 250px;
+    z-index: 1000;
+}
+
+.interaction-hints h4 {
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.interaction-hints ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.interaction-hints li {
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+}
+
+.interaction-hints li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+    font-size: 0.7em;
+}
+
+/* ====== PERFORMANCE INDICATOR ====== */
+.performance-indicator {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 15, 25, 0.9);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    font-size: 0.8em;
+    color: #cccccc;
+    z-index: 1000;
+    font-family: monospace;
+}
+
+.performance-indicator .fps {
+    color: #55ff55;
+    font-weight: bold;
+}
+
+/* ====== ENHANCED RESPONSIVE DESIGN ====== */
+@media (max-width: 1024px) {
+    .advanced-controls-container {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 20px auto;
+    }
+
+    .interaction-hints {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .performance-indicator {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 768px) {
+    .advanced-controls-container {
+        padding: 15px;
+        min-width: auto;
+        width: 100%;
+    }
+
+    .advanced-control-btn {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .header h1 {
+        font-size: 2.2em;
+    }
+
+    .canvas-section::before {
+        animation-duration: 30s;
+        /* Slower on mobile for better performance */
+    }
+}
+
+/* ====== ACCESSIBILITY ENHANCEMENTS ====== */
+@media (prefers-reduced-motion: reduce) {
+
+    .canvas-section::before,
+    .header h1,
+    .header .inspiration,
+    #canvas-container {
+        animation: none !important;
+    }
+
+    * {
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus indicators for keyboard navigation */
+.advanced-slider:focus,
+.view-mode-selector:focus,
+.advanced-control-btn:focus {
+    outline: 2px solid rgba(85, 255, 85, 0.7);
+    outline-offset: 2px;
+}
+
+/* ====== LOADING ENHANCEMENTS ====== */
+#loading {
+    background: rgba(15, 15, 25, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    animation: loadingPulse 2s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+}
+
+/* ====== IMPOSSIBLE GEOMETRY VISUAL EFFECTS ====== */
+.impossible-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.impossible-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    animation: impossibleSweep 3s ease-in-out infinite;
+}
+
+@keyframes impossibleSweep {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: -100%;
+    }
+}

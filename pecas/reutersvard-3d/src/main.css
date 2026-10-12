@@ -1,0 +1,265 @@
+/* Main Stylesheet - 3D Reutersvärd Triangle
+ * Modern CSS architecture for WebGL visualization interface
+ * @author Tatiana Barros
+ * @version 4.0.0
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg: #07070b;
+    --panel: rgba(255, 255, 255, 0.03);
+    --muted: #a8a8b3;
+    --accent: #64ffda;
+    --max-width: 1200px;
+    --gap: 1rem;
+    --measure: 36ch;
+    --panel-padding: 1.125rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: var(--bg);
+    color: #fff;
+}
+
+/* Typographic improvements for readability */
+body,
+button,
+input,
+select {
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+.info-text,
+.muted {
+    font-size: 0.98rem;
+    color: var(--muted);
+    max-width: var(--measure);
+    /* optimal measure for readable paragraphs */
+    text-align: left;
+}
+
+.header h1 {
+    line-height: 1.05
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: calc(var(--gap)*1.5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1rem
+}
+
+.header h1 {
+    font-size: 1.9rem;
+    color: var(--accent);
+}
+
+.header .subtitle {
+    color: var(--muted);
+    margin-top: 0.35rem
+}
+
+#canvas-container {
+    width: min(900px, 88vw);
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--panel);
+    padding: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.04)
+}
+
+#canvas-container canvas {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.controls {
+    width: min(600px, 90%);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem
+}
+
+.controls button {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: .45rem .8rem;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.controls .btn-primary {
+    background: var(--accent);
+    color: #041014;
+    padding: .5rem .9rem;
+    border-radius: 8px;
+    border: none
+}
+
+@media (max-width:640px) {
+    .header h1 {
+        font-size: 1.4rem
+    }
+
+    #canvas-container {
+        width: 94vw
+    }
+}
+
+/* Two-column responsive layout */
+.main-content.three-column {
+    display: grid;
+    /* Two columns: left controls ~25%, center canvas fluid */
+    grid-template-columns: minmax(220px, 25%) 1fr;
+    gap: 1rem;
+    width: 100%;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.left-column {
+    background: rgba(255, 255, 255, 0.02);
+    padding: calc(var(--panel-padding) * 0.72);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    min-height: 320px;
+}
+
+.center-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls-left .controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .6rem;
+}
+
+.control-group label {
+    display: block;
+    font-size: .85rem;
+    color: var(--muted);
+    margin-bottom: .25rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+    margin-top: .45rem;
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--muted);
+    padding: .25rem .5rem;
+    border-radius: 6px;
+    font-size: .8rem;
+}
+
+.panel-title {
+    color: var(--accent);
+    font-size: 1.05rem;
+    margin-bottom: .5rem;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: .9rem;
+    margin: .25rem 0
+}
+
+@media (max-width: 980px) {
+    .main-content.three-column {
+        grid-template-columns: 1fr;
+    }
+
+    .left-column {
+        min-height: auto;
+    }
+
+    #canvas-container {
+        width: 94vw
+    }
+}
+
+/* Improve panel inner spacing and alignment */
+.left-column>* {
+    margin-bottom: 0.75rem;
+}
+
+.left-column .controls-panel {
+    margin-top: 0.5rem;
+}
+
+/* Sub-head styling inside panels */
+.left-column h3 {
+    color: #fff;
+    font-size: .98rem;
+    margin-bottom: .35rem;
+}
+
+/* Small improvements for medium screens */
+@media (min-width: 981px) and (max-width: 1200px) {
+    .main-content.three-column {
+        grid-template-columns: 240px 1fr;
+        gap: 1rem;
+    }
+
+    #canvas-container {
+        width: min(760px, 70vw)
+    }
+}
+
+/* Controls improvements */
+input[type="range"] {
+    width: 100%;
+    height: 2.2rem;
+    accent-color: var(--accent);
+}
+
+.controls-buttons {
+    display: flex;
+    gap: .6rem;
+}

@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  /* Define estilos básicos para o corpo da página */
+}
+
+.container {
+  text-align: center;
+  /* Centraliza o texto dentro da div container */
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  /* Define o estilo do título */
+}
+
+#canvas-container {
+  display: inline-block;
+  border: 2px solid #333;
+  background-color: #fff;
+  /* Define o estilo do contêiner do canvas */
+}

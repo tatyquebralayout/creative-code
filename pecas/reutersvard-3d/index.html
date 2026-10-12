@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Essential meta tags for character encoding and responsive viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO and social media meta tags -->
+  <meta name="description"
+    content="Interactive 3D visualization of the impossible Reutersvärd Triangle optical illusion using p5.js and WebGL. Explore impossible geometry through creative coding.">
+  <meta name="keywords"
+    content="3D graphics, optical illusion, Reutersvärd triangle, Penrose triangle, p5.js, WebGL, interactive art, creative coding, impossible geometry">
+  <meta name="author" content="Tatiana Barros">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tatyquebralayout.github.io/3D-of-the-Reutersv-rd-Triangle/">
+  <meta property="og:title" content="3D Reutersvärd Triangle - Interactive Optical Illusion">
+  <meta property="og:description"
+    content="Experience the mesmerizing world of impossible geometry with this interactive 3D visualization">
+  <meta property="og:image"
+    content="https://tatyquebralayout.github.io/3D-of-the-Reutersv-rd-Triangle/assets/preview.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://tatyquebralayout.github.io/3D-of-the-Reutersv-rd-Triangle/">
+  <meta property="twitter:title" content="3D Reutersvärd Triangle - Interactive Optical Illusion">
+  <meta property="twitter:description"
+    content="Experience the mesmerizing world of impossible geometry with this interactive 3D visualization">
+  <meta property="twitter:image"
+    content="https://tatyquebralayout.github.io/3D-of-the-Reutersv-rd-Triangle/assets/preview.png">
+
+  <!-- Page title -->
+  <title>3D Reutersvärd Triangle - Interactive Optical Illusion</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,10 90,75 10,75' fill='%23666' stroke='%23000' stroke-width='2'/></svg>">
+
+  <!-- External CSS (main stylesheet) -->
+  <link rel="stylesheet" href="src/main.css">
+
+  <!-- p5.js library and extensions via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+    integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Main application script -->
+  <script src="src/reutersvard-renderer.js"></script>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "3D Reutersvärd Triangle",
+    "description": "Interactive 3D visualization of the impossible Reutersvärd Triangle optical illusion",
+    "url": "https://tatyquebralayout.github.io/3D-of-the-Reutersv-rd-Triangle/",
+    "author": {
+      "@type": "Person",
+      "name": "Taty Quebra Layout"
+    },
+    "programmingLanguage": "JavaScript",
+    "runtimePlatform": "Web Browser",
+    "applicationCategory": "Educational, Art"
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Main container -->
+  <div class="container">
+    <!-- Header section -->
+    <header class="header">
+      <h1 id="main-content">3D Reutersvärd Triangle</h1>
+      <p class="subtitle">Interactive Digital Art & Optical Illusion</p>
+      <p class="author">By Tatiana Barros • Code Art & Digital Creativity</p>
+    </header>
+
+    <!-- Main content section: three-column layout -->
+    <main class="main-content three-column">
+      <!-- Left column: stack & controls -->
+      <aside class="left-column panel-left" aria-labelledby="left-panel-title">
+        <h2 id="left-panel-title" class="panel-title">Stack & Controls</h2>
+        <p class="info-text">
+          Tools and project stack used to build this experiment. Controls are grouped below for quick interaction.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">p5.js</span>
+          <span class="tech-tag">WebGL</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Creative Coding</span>
+        </div>
+
+        <div class="controls controls-left" aria-label="Visualization controls">
+          <div class="controls-panel">
+            <h3>Interactive Controls</h3>
+
+            <div class="controls-grid">
+              <div class="control-group">
+                <label for="rotationXSlider">X-Axis</label>
+                <input type="range" id="rotationXSlider" min="0" max="360" value="0" step="1">
+              </div>
+
+              <div class="control-group">
+                <label for="rotationYSlider">Y-Axis</label>
+                <input type="range" id="rotationYSlider" min="0" max="360" value="0" step="1">
+              </div>
+
+              <div class="control-group">
+                <label for="rotationZSlider">Z-Axis</label>
+                <input type="range" id="rotationZSlider" min="0" max="360" value="0" step="1">
+              </div>
+            </div>
+
+            <div class="controls-buttons">
+              <button id="reset" class="btn-primary" type="button">Reset</button>
+              <button id="auto-rotate" type="button">Auto Rotate</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center column: canvas -->
+      <section class="center-column canvas-section" role="region" aria-label="Main visualization">
+        <div id="canvas-container" role="img" aria-label="Interactive 3D Reutersvärd Triangle visualization"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Loading indicator -->
+  <div id="loading" class="loading-overlay">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <p>Loading 3D Environment...</p>
+    </div>
+  </div>
+
+  <!-- Error fallback -->
+  <noscript>
+    <div class="error-message">
+      <h2>JavaScript Required</h2>
+      <p>This interactive 3D visualization requires JavaScript to be enabled in your browser.</p>
+    </div>
+  </noscript>
+</body>
+
+</html>

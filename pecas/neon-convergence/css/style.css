@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #1A1A1A;
+    /* Fundo escuro para realçar o drama */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ilusão Interativa Avançada em 3D do Triângulo de Reutersvärd</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+  <script src="js/sketch.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Ilusão Interativa Avançada em 3D do Triângulo de Reutersvärd</h1>
+    </div>
+    <div class="main-content">
+      <div class="controls">
+        <label for="rotationXSlider">Rotação em X:</label>
+        <input type="range" id="rotationXSlider" min="0" max="360" value="0">
+
+        <label for="rotationYSlider">Rotação em Y:</label>
+        <input type="range" id="rotationYSlider" min="0" max="360" value="0">
+
+        <label for="rotationZSlider">Rotação em Z:</label>
+        <input type="range" id="rotationZSlider" min="0" max="360" value="0">
+
+        <label for="lightXSlider">Posição da Luz em X:</label>
+        <input type="range" id="lightXSlider" min="-300" max="300" value="0">
+
+        <label for="lightYSlider">Posição da Luz em Y:</label>
+        <input type="range" id="lightYSlider" min="-300" max="300" value="0">
+
+        <label for="lightZSlider">Posição da Luz em Z:</label>
+        <input type="range" id="lightZSlider" min="-300" max="300" value="0">
+
+        <button id="reset">Redefinir</button>
+      </div>
+      <div id="canvas-container"></div>
+    </div>
+  </div>
+</body>
+</html>

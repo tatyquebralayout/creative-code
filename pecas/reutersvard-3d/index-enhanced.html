@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Enhanced SEO Meta Tags for Impossible Geometry Art -->
+    <title>3D Reutersvärd Triangle | Interactive Impossible Geometry | Digital Art by Oscar Reutersvärd</title>
+    <meta name="description"
+        content="Experience the revolutionary impossible geometry of Oscar Reutersvärd's famous triangle in interactive 3D. Advanced WebGL visualization of the Penrose triangle impossible object with dynamic perspective manipulation and multiple rendering modes.">
+    <meta name="keywords"
+        content="Oscar Reutersvärd, impossible triangle, Penrose triangle, impossible geometry, WebGL, 3D visualization, impossible object, optical illusion, digital art, interactive art, geometric art, mathematical art, perspective illusion">
+    <meta name="author" content="Tatiana Barros">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="pt-BR">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Enhanced Open Graph Meta Tags -->
+    <meta property="og:title" content="3D Reutersvärd Triangle - Interactive Impossible Geometry Art">
+    <meta property="og:description"
+        content="Revolutionary interactive 3D visualization of Oscar Reutersvärd's famous impossible triangle. Experience impossible geometry with dynamic perspective manipulation and advanced WebGL rendering.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./screenshots/impossible-triangle-preview.jpg">
+    <meta property="og:url" content="https://yourdomain.com/3d-reutersvard-triangle">
+    <meta property="og:site_name" content="Interactive Impossible Geometry Art">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="3D Reutersvärd Triangle - Interactive Impossible Geometry">
+    <meta name="twitter:description"
+        content="Experience Oscar Reutersvärd's revolutionary impossible triangle in advanced 3D with dynamic perspective manipulation.">
+    <meta name="twitter:image" content="./screenshots/impossible-triangle-preview.jpg">
+
+    <!-- Advanced Technical Meta Tags -->
+    <meta name="theme-color" content="#0f0f19">
+    <meta name="msapplication-TileColor" content="#0f0f19">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+    <!-- Enhanced Stylesheets -->
+    <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/enhanced-styles.css">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.min.js" as="script">
+    <link rel="preload" href="./src/reutersvard-renderer.js" as="script">
+
+    <!-- JSON-LD Structured Data for Enhanced SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "3D Reutersvärd Triangle - Interactive Impossible Geometry",
+        "description": "Interactive 3D visualization of Oscar Reutersvärd's famous impossible triangle with advanced WebGL rendering and dynamic perspective manipulation",
+        "creator": {
+            "@type": "Person",
+            "name": "Tatiana Barros"
+        },
+        "artMedium": "Digital Art, WebGL, Interactive Visualization",
+        "artworkSurface": "Web Browser",
+        "genre": "Impossible Geometry, Mathematical Art, Optical Illusion",
+        "dateCreated": "2024",
+        "keywords": "Oscar Reutersvärd, impossible triangle, Penrose triangle, WebGL, 3D visualization, impossible geometry, optical illusion",
+        "about": {
+            "@type": "Person",
+            "name": "Oscar Reutersvärd",
+            "birthDate": "1915-11-29",
+            "deathDate": "2002-02-02",
+            "nationality": "Swedish",
+            "description": "Father of impossible figures, creator of the first impossible triangle in 1934"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Loading Indicator -->
+    <div id="loading">
+        <div style="text-align: center;">
+            <div style="font-size: 2em; margin-bottom: 10px;">🔺</div>
+            <div>Loading Impossible Geometry...</div>
+            <div style="font-size: 0.8em; opacity: 0.7; margin-top: 5px;">Initializing Oscar Reutersvärd Engine</div>
+        </div>
+    </div>
+
+    <!-- Performance Indicator -->
+    <div class="performance-indicator" style="display: none;">
+        <span class="fps">60</span> FPS | WebGL Active
+    </div>
+
+    <div class="container">
+        <!-- Enhanced Header with Historical Context -->
+        <header class="header">
+            <h1>3D Reutersvärd Triangle</h1>
+            <p class="subtitle">Interactive Impossible Geometry Visualization</p>
+            <p class="inspiration">
+                Inspired by Oscar Reutersvärd (1915-2002)<br>
+                "Father of Impossible Figures" - Triangle created 1934
+            </p>
+        </header>
+
+        <!-- Enhanced Canvas Section with Background Effects -->
+        <section class="canvas-section">
+            <div id="canvas-container">
+                <!-- p5.js canvas will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Enhanced Controls Section -->
+        <aside class="controls-section">
+            <h2>Impossible Geometry Controls</h2>
+
+            <!-- Basic Rotation Controls -->
+            <div class="control-group">
+                <label for="rotationXSlider">Rotation X Axis</label>
+                <input type="range" id="rotationXSlider" class="slider" min="-180" max="180" value="0" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="rotationYSlider">Rotation Y Axis</label>
+                <input type="range" id="rotationYSlider" class="slider" min="-180" max="180" value="0" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="rotationZSlider">Rotation Z Axis</label>
+                <input type="range" id="rotationZSlider" class="slider" min="-180" max="180" value="0" step="1">
+            </div>
+
+            <!-- Enhanced Reset Button -->
+            <div class="control-group">
+                <button id="reset" class="reset-btn impossible-effect">
+                    Reset to Origin
+                </button>
+            </div>
+
+            <!-- Advanced Geometry Information -->
+            <div class="control-group" style="margin-top: 30px;">
+                <h3 style="color: #64ffda; margin-bottom: 10px; font-size: 1.1em;">About This Impossible Object</h3>
+                <p style="font-size: 0.9em; line-height: 1.6; color: #cccccc;">
+                    The Reutersvärd Triangle is a famous impossible object created by Swedish artist
+                    <strong>Oscar Reutersvärd</strong> in 1934. This interactive 3D visualization
+                    demonstrates the paradoxical nature of impossible geometry through advanced
+                    WebGL rendering techniques.
+                </p>
+                <p style="font-size: 0.85em; margin-top: 10px; color: #88ccff;">
+                    Use mouse movement for dynamic illusion control, click to cycle view modes,
+                    and keyboard shortcuts for advanced manipulation.
+                </p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Interactive Hints Panel -->
+    <div class="interaction-hints">
+        <h4>Interactive Controls</h4>
+        <ul>
+            <li><strong>Mouse:</strong> Dynamic illusion intensity</li>
+            <li><strong>Click:</strong> Cycle view modes</li>
+            <li><strong>R:</strong> Quick reset</li>
+            <li><strong>A:</strong> Auto-rotation</li>
+            <li><strong>1-3:</strong> View modes</li>
+            <li><strong>+/-:</strong> Illusion intensity</li>
+            <li><strong>D:</strong> Toggle depth layers</li>
+        </ul>
+    </div>
+
+    <!-- Enhanced Script Loading with Error Handling -->
+    <script>
+        // Enhanced error handling and performance monitoring
+        window.addEventListener('error', (e) => {
+            console.error('Runtime error:', e.error);
+            document.getElementById('loading').innerHTML = `
+                <div style="color: #ff6b6b;">
+                    <div style="font-size: 1.5em; margin-bottom: 10px;">⚠️</div>
+                    <div>Error loading impossible geometry</div>
+                    <div style="font-size: 0.8em; margin-top: 5px;">Please refresh the page</div>
+                </div>
+            `;
+        });
+
+        // Performance monitoring
+        let frameCount = 0;
+        let lastTime = performance.now();
+
+        function updatePerformance() {
+            frameCount++;
+            const currentTime = performance.now();
+
+            if (currentTime - lastTime >= 1000) {
+                const fps = Math.round(frameCount * 1000 / (currentTime - lastTime));
+                const perfIndicator = document.querySelector('.performance-indicator');
+                if (perfIndicator) {
+                    perfIndicator.querySelector('.fps').textContent = fps;
+                    perfIndicator.style.display = 'block';
+                }
+                frameCount = 0;
+                lastTime = currentTime;
+            }
+
+            requestAnimationFrame(updatePerformance);
+        }
+
+        // Start performance monitoring
+        requestAnimationFrame(updatePerformance);
+
+        console.log('🎨 Enhanced 3D Reutersvärd Triangle Interface Loaded');
+        console.log('🔺 Tribute to Oscar Reutersvärd (1915-2002) - Father of Impossible Figures');
+    </script>
+
+    <!-- Core Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.min.js"></script>
+
+    <!-- Enhanced Reutersvärd Renderer -->
+    <script src="./src/reutersvard-renderer.js"></script>
+</body>
+
+</html>
